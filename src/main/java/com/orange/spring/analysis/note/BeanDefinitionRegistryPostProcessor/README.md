@@ -1,0 +1,6 @@
+#### 接口定义
+* BeanFactoryPostProcessor是spring容器级别的拓展接口,是在BeanDefinition加载完成之后,未实例化之前.可以拓展接口,对定制化修改BeanDefinition
+* BeanDefinitionRegistryPostProcessor继承自BeanFactoryPostProcessor，是一种比较特殊的BeanFactoryPostProcessor。
+  BeanDefinitionRegistryPostProcessor#postProcessBeanDefinitionRegistry方法可实现自定义的bean注册定义。
+  通常spring注册bean使用静态方式, 如:xml、@Bean注解或@Component方式实现注册.不能通过程序来选择是否注册
+
