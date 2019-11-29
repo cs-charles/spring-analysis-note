@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @Description:
  */
 @Component
-public class CustomBeanDefinitionRegistry implements BeanDefinitionRegistryPostProcessor {
+public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
         GenericBeanDefinition definition = new GenericBeanDefinition();

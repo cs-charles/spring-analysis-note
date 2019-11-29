@@ -6,6 +6,8 @@ import org.springframework.beans.PropertyValue;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
 
 /**
@@ -24,5 +26,9 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
             System.out.print("修改之前 a 的value是："+value.getValue()+"\n");
             value.setConvertedValue("postProcessBeanFactory修改属性");
         }
+        /**也可以注册BeanDefinition对象**/
+        /*DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory)beanFactory;
+        BeanDefinition beanDefinition =  new GenericBeanDefinition(bd);
+        defaultListableBeanFactory.registerBeanDefinition("registryBean1",beanDefinition);*/
     }
 }

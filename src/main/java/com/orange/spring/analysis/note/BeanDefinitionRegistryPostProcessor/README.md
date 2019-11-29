@@ -4,11 +4,13 @@
   BeanDefinitionRegistryPostProcessor#postProcessBeanDefinitionRegistry方法可实现自定义的bean注册定义。
   通常spring注册bean使用静态方式, 如:xml、@Bean注解或@Component方式实现注册.不能通过程序来选择是否注册
 * 实现BeanDefinitionRegistryPostProcessor的类可以获得BeanDefinitionRegistry 对象，通过它可以动态的注册组件,是实现动态注册的钩子函数。spring典型的ConfigurationClassPostProcessor拓展BeanDefinitionRegistryPostProcessor 解析@Configuration配置类 
+* 在执行时间点上，BeanDefinitionRegistryPostProcessor比BeanFactoryPostProcessor先执行
+* 不仅仅BeanDefinitionRegistryPostProcessor可以注册BeanDefinition，通过BeanFactoryPostProcessor也可以注册，具体见CustomBeanFactoryPostProcessor
 
 #### BeanFactoryPostProcessor注册时机与触发时间点
    注册和触发的入口在AbstractApplicationContext#refresh 容器刷新阶段, 只会调用一次 属于容器级别的拓展接口:
    refresh方法在bean definition加载完成之后会调用 invokeBeanFactoryPostProcessors触发
-   
+
 #### 源码分析   
 ```
 @Override
@@ -290,6 +292,9 @@ private static void sortPostProcessors(List<?> postProcessors, ConfigurableLista
         }
     }
 ```
+
+
+
 
 
 
