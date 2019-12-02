@@ -16,11 +16,7 @@
         表示@Configuration注解注释的BeanDefinition类
    6. ScannedGenericBeanDefinition类:
         表示@Component、@Service、@Controller等注解注释的Bean类
-   图片 ....
-   
-   
-   
-
+   ![image]('https://github.com/dscxieyong/spring-analysis-note/blob/master/src/main/java/com/orange/spring/analysis/note/beanDefinition.png')
 #### 触发时间
 该方法是bean在合并Bean定义之后调用
 
