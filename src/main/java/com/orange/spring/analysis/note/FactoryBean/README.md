@@ -1,0 +1,6 @@
+#### 接口定义
+FactoryBean对象设计是为了生成简化对象, 在BeanDefinition加载的时候FactoryBean的beanName会带有特殊前缀&.
+
+#### 触发时间
+由bean创建过程分析FactoryBean获取bean的流程: 入口 AbstractAutowireCapableBeanFactory.getObjectForBeanInstance
+AbstractAutowireCapableBeanFactory.getObjectForBeanInstance
